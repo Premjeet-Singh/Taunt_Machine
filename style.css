@@ -1,0 +1,84 @@
+
+    * {
+  
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+
+  
+} 
+input{
+  
+  display: block;
+  width: 70%;
+  margin: 20px auto;
+  padding: 30px;
+  font-size: 18px;
+  text-transform: capitalize;
+  
+}
+
+input[type="submit"]{
+ width:82%;
+ height: 10px;
+ background:blanchedalmond;
+ border: 4px solid brown;
+  border-radius: 15px;
+line-height:0px;
+}
+
+section {
+  
+  background: darkcyan;
+  color:white;
+  width: 500px;
+  padding: 50px;
+  margin: 20px auto;
+  
+}
+
+
+section .time {
+  
+  text-align: center;
+  padding: 120px;
+  font-size: 36px !important;
+
+}
+.status {
+  
+  background: green;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.taunt {
+  
+  background: green;
+  margin: 20px;
+  padding: 20px;
+  text-align: justify;
+  overflow: hidden;
+}
+
+.report {
+  font-size: 17px;
+  line-height: 26px;
+
+}
+
+
+.hide{
+  
+  display: none;
+}
+
+
+.show{
+  
+  display: block;
+}
+
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test TaunT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body bgcolor="silver">
+    
+<section class="form"> 
+    <!-- first section -->
+<div >
+            Name :<input type="text" class="n">
+            Age :<input type="number" class="a">
+            Location :<input type="text" class="lc">
+            <input type="submit" value="Submit" class="submit">
+</div>
+</section>
+
+<section class="timer">
+    <!-- second section-->
+<div class="time">
+</div>
+</section>
+
+<section class="report">
+    <!-- third section-->
+<div class="status"></div>
+<div class="taunt"> </div>
+<div >
+    
+
+
+
+</section>
+
+
+<script>
+    // global variables 
+var str="You are quite";
+
+hide('.report');
+hide('.timer');
+
+var a=document.querySelector('.a');
+var n=document.querySelector('.n');    
+var x=document.querySelector('.form .submit');
+x.addEventListener("click",dosomething);
+var t=document.querySelector('.timer .time');
+var tmr=document.querySelector('.timer');
+var rp1=document.querySelector('.report .status');
+var rp2=document.querySelector('.report .taunt');
+
+
+// ........Function to show Timer..............
+
+function dosomething(){
+
+        hide('.form');
+        show('.timer');
+     
+        t.load=wait();
+        function wait()
+        {
+            var i=1;
+            count(i);
+            function count(i){
+            myVar=setTimeout(function(){
+            t.innerHTML=i;
+            if(i==3){
+            clearTimeout(myVar);
+            invokesAfterTimer();
+            return;
+          }
+          count(i+1)
+     },1000)
+}
+}
+}
+
+// ........... Function to show Message According to User's Age...............
+function invokesAfterTimer()
+{
+        //hide('.timer');
+        tmr.style.display="none";
+        show('.report');
+        rp1.load = msg();
+     
+        function msg()
+    { 
+      if(a.value<=0)
+        rp1.innerHTML="Invalid Age!! Enter Valid Age";
+      else if(a.value>0&&a.value<=5)
+        rp1.innerHTML="Hello "+ n.value + " ," + str + "  Little.";
+      else if(a.value>5&&a.value<=12)
+        rp1.innerHTML="Hello "+ n.value + " ," + str + "  Young.";
+      else if(a.value>12&&a.value<=19)
+        rp1.innerHTML="Hello "+ n.value + " ," + str + "  Teenager.";
+      else
+        rp1.innerHTML="Hello "+ n.value + " ," + str + "  Old.";
+      test();
+    }
+
+}
+
+// ........... Function for Scrapping...............
+
+
+function test()
+{
+
+var txt="According to Our AI machine, the Taunt you received is:- "+"</br></br>";  
+var rndm= rndmfun();
+
+if(arr[rndm].length<250)
+{
+rp2.innerHTML=txt + arr[rndm];
+}  
+
+}
+
+// ........... Function to generate Random number...............
+
+function rndmfun()
+{
+  return (Math.floor((Math.random() * 500) + 1));
+}
+
+// ........... Show Function...............
+
+ function show(x){
+
+                        var y=document.querySelector(x);
+                        y.className=y.className+" show";
+ }
+
+// ........... Hide Function ...............
+
+ function hide(x){
+
+                    var y=document.querySelector(x);
+                        y.className=y.className+" hide";
+
+ }
+
+
+</script>
+<script src="database.js"></script>
+
+</body>
+</html>
